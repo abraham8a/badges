@@ -1,6 +1,10 @@
 const scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
 
-scanner.render(onScanSuccess, onScanError);
+function startScanner() {
+    scanner.render(onScanSuccess, onScanError);
+}
+
+startScanner(); // Initial start
 
 function onScanSuccess(decodedText) {
     scanner.clear();
@@ -27,6 +31,16 @@ function onScanSuccess(decodedText) {
     }
     document.body.innerHTML = "";
     document.body.appendChild(resultDiv);
+
+    // Auto-return to scanner after 3 seconds
+    setTimeout(() => {
+        document.body.innerHTML = `
+            <h1>Scan QR Code for Date Validation</h1>
+            <div id="reader" style="width: 300px; margin: auto;"></div>
+            <p id="result"></p>
+        `;
+        startScanner(); // Restart scanner
+    }, 3000);
 }
 
 function onScanError(error) {
