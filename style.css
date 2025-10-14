@@ -1,1 +1,25 @@
-
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+.valid {
+    background-color: #00FF00; /* Bright green */
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.invalid {
+    background-color: #FF0000; /* Bright red */
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
