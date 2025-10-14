@@ -22,4 +22,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: flash 1s infinite; /* Flashing effect */
+}
+@keyframes flash {
+    0% { background-color: #FF0000; }
+    50% { background-color: #FF6666; } /* Lighter red for flash */
+    100% { background-color: #FF0000; }
 }
